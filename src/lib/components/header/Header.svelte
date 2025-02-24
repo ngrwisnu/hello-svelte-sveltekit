@@ -3,7 +3,7 @@
 </script>
 
 <header>
-	<div class="navbar bg-base-100 shadow-sm">
+	<div class="navbar bg-base-100 p-4 shadow-sm">
 		<div class="flex-none">
 			<button class="btn btn-square btn-ghost">
 				<Menu />

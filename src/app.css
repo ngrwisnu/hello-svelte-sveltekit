@@ -6,6 +6,10 @@
 		pastel;
 }
 
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
 body {
 	@apply min-h-svh bg-slate-200;
 }
