@@ -4,12 +4,17 @@
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
+	let isClose = $state(false);
+
+	const sidenavHandler = () => {
+		isClose = !isClose;
+	};
 </script>
 
 <div class="flex">
-	<Sidenav page={data.page} />
+	<Sidenav page={data.page} {isClose} />
 	<div class="flex-1">
-		<Header />
+		<Header {sidenavHandler} />
 		{@render children()}
 	</div>
 </div>

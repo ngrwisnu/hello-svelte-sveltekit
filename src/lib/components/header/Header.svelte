@@ -1,11 +1,20 @@
-<script>
+<script lang="ts">
 	import { Menu } from 'lucide-svelte';
+
+	type Props = {
+		sidenavHandler: () => void;
+	};
+
+	const { sidenavHandler }: Props = $props();
 </script>
 
 <header>
 	<div class="navbar bg-base-100 p-4 shadow-sm">
 		<div class="flex-none">
-			<button class="btn btn-square btn-ghost">
+			<button
+				class="btn btn-square btn-ghost border-none bg-transparent outline-0"
+				onclick={sidenavHandler}
+			>
 				<Menu />
 			</button>
 		</div>

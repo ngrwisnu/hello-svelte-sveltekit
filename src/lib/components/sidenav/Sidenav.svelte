@@ -8,6 +8,11 @@
 		icon: typeof IconType;
 	};
 
+	type Props = {
+		page?: string;
+		isClose: boolean;
+	};
+
 	const menus: MenuItem[] = [
 		{
 			id: 'orders',
@@ -23,19 +28,32 @@
 		}
 	];
 
-	const { page } = $props();
+	const { page, isClose }: Props = $props();
 </script>
 
-<aside class="bg-base-100 sticky top-0 flex h-screen w-64 flex-col">
+<aside
+	class={[
+		'bg-base-100 sticky top-0 flex h-screen flex-col transition-all duration-300',
+		isClose ? 'w-16' : 'w-64'
+	]}
+>
 	<div class="h-16"></div>
-	<div class="p-4">
+	<div>
 		<ul class="menu w-full">
 			{#each menus as menu (menu.id)}
 				{@const Icon = menu.icon}
 				<li class="mb-2">
-					<a href={menu.link} class={['rounded-lg', menu.id === page && 'menu-active']}>
+					<a
+						href={menu.link}
+						class={[
+							'rounded-lg',
+							menu.id === page && 'menu-active',
+							isClose && 'tooltip tooltip-right'
+						]}
+						data-tip={isClose && menu.text}
+					>
 						<Icon size={20} />
-						{menu.text}
+						<span class={`${isClose && 'hidden'}`}>{menu.text}</span>
 					</a>
 				</li>
 			{/each}
