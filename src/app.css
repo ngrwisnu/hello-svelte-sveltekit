@@ -13,3 +13,7 @@ html {
 body {
 	@apply min-h-svh bg-slate-200;
 }
+
+.menu-active {
+	@apply bg-[#55AD9B];
+}
