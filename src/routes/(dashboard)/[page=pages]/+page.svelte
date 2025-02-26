@@ -7,15 +7,16 @@
 	let { data }: PageProps = $props();
 
 	let PageComp = $derived.by(() => {
-		switch (data.page) {
-			case 'customers':
-				return Customers;
-			case 'orders':
-				return Orders;
-			default:
-				return Dashboard;
-		}
+		const pagesMap: {
+			[key: string]: any;
+		} = {
+			customers: Customers,
+			orders: Orders,
+			default: Dashboard
+		};
+
+		return pagesMap[data.page || 'default'];
 	});
 </script>
 
-<PageComp />
+<PageComp users={data.users} />
