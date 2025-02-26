@@ -1,7 +1,21 @@
-<script>
-	const clickHandler = () => alert('clicked');
+<script lang="ts">
+	import Customers from '$lib/pages/Customers.svelte';
+	import Dashboard from '$lib/pages/Dashboard.svelte';
+	import Orders from '$lib/pages/Orders.svelte';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+
+	let PageComp = $derived.by(() => {
+		switch (data.page) {
+			case 'customers':
+				return Customers;
+			case 'orders':
+				return Orders;
+			default:
+				return Dashboard;
+		}
+	});
 </script>
 
-<h1 class="text-2xl font-semibold">Welcome to SvelteKit</h1>
-<button onclick={clickHandler}>click me</button>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<PageComp />

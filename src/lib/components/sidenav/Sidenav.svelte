@@ -46,14 +46,17 @@
 					<a
 						href={menu.link}
 						class={[
-							'rounded-lg',
+							'rounded-lg transition-all',
 							menu.id === page && 'menu-active',
-							isClose && 'tooltip tooltip-right'
+							isClose && 'tooltip tooltip-right',
+							isClose ? 'gap-0' : 'gap-2'
 						]}
 						data-tip={isClose && menu.text}
 					>
 						<Icon size={20} />
-						<span class={`${isClose && 'hidden'}`}>{menu.text}</span>
+						<span class={`${isClose ? 'text-[0.1px] opacity-0' : 'opacity-100'} transition-all`}
+							>{menu.text}</span
+						>
 					</a>
 				</li>
 			{/each}

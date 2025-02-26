@@ -15,6 +15,8 @@
 	<Sidenav page={data.page} {isClose} />
 	<div class="flex-1">
 		<Header {sidenavHandler} />
-		{@render children()}
+		<main class="p-4">
+			{@render children()}
+		</main>
 	</div>
 </div>
