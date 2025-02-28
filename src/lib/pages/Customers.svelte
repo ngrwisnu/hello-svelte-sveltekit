@@ -31,7 +31,7 @@
 	</div>
 	<div class="w-full overflow-x-hidden">
 		<div class="rounded-box bg-base-100 mt-4 w-full">
-			<table class="table min-w-[960px]">
+			<table class="table">
 				<thead>
 					<tr>
 						<th>Username</th>

@@ -2,7 +2,7 @@
 	const { children } = $props();
 </script>
 
-<div id="wrapper-main" class="w-full">{@render children()}</div>
+<div id="wrapper-main" class="w-full p-4">{@render children()}</div>
 
 <style>
 	#wrapper-main :global(h1) {

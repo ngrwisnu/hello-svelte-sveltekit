@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/components/footer/Footer.svelte';
 	import Header from '$lib/components/header/Header.svelte';
 	import Sidenav from '$lib/components/sidenav/Sidenav.svelte';
 	import type { LayoutProps } from './$types';
@@ -15,8 +16,9 @@
 	<Sidenav page={data.page} {isClose} />
 	<div class="w-full flex-1">
 		<Header {sidenavHandler} />
-		<main class="w-full p-4">
+		<main class="min-h-svh w-full">
 			{@render children()}
 		</main>
+		<Footer />
 	</div>
 </div>
