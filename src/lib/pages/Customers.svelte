@@ -1,7 +1,8 @@
 <script lang="ts">
-	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import type { UserType } from '$lib/types/user';
 	import { EllipsisVertical } from 'lucide-svelte';
+	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
+	import Input from '$lib/components/ui/Input.svelte';
 
 	type Props = {
 		users: UserType[];
@@ -22,12 +23,7 @@
 <WrapperMain>
 	<h1>Customers</h1>
 	<div class="mt-8 flex w-full">
-		<input
-			type="text"
-			bind:value={searchText}
-			placeholder="Search username"
-			class="input w-full basis-full border-none focus:outline-slate-300 md:basis-1/4"
-		/>
+		<Input type="text" bind:value={searchText} class="lg:basis-1/4" placeholder="Search username" />
 	</div>
 	<div class="w-full overflow-x-hidden">
 		<div class="rounded-box bg-base-100 mt-4 w-full">
@@ -42,7 +38,7 @@
 				</thead>
 				<tbody>
 					{#if !selectedUsers.length}
-						<tr><td>User doesn't exist</td></tr>
+						<tr><td colspan="4" class="text-center">User doesn't exist</td></tr>
 					{/if}
 					{#each selectedUsers as user (user.id)}
 						<tr>
