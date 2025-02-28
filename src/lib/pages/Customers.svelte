@@ -3,6 +3,7 @@
 	import { EllipsisVertical } from 'lucide-svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import Input from '$lib/components/ui/Input.svelte';
+	import Table from '$lib/components/ui/Table.svelte';
 
 	type Props = {
 		users: UserType[];
@@ -27,33 +28,29 @@
 	</div>
 	<div class="w-full overflow-x-hidden">
 		<div class="rounded-box bg-base-100 mt-4 w-full">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Username</th>
-						<th>Email</th>
-						<th>Role</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					{#if !selectedUsers.length}
-						<tr><td colspan="4" class="text-center">User doesn't exist</td></tr>
-					{/if}
-					{#each selectedUsers as user (user.id)}
-						<tr>
-							<td>{user.username}</td>
-							<td>{user.email}</td>
-							<td>{user.role}</td>
-							<th>
-								<button class="size-9 hover:cursor-pointer" onclick={() => actionHandler(user.id)}>
-									<EllipsisVertical size={20} />
-								</button>
-							</th>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
+			<Table data={selectedUsers}>
+				{#snippet header()}
+					<th>Username</th>
+					<th>Email</th>
+					<th>Role</th>
+					<th></th>
+				{/snippet}
+
+				{#snippet row(d)}
+					<td>{d.username}</td>
+					<td>{d.email}</td>
+					<td>{d.role}</td>
+					<th>
+						<button class="size-9 hover:cursor-pointer" onclick={() => actionHandler(d.id)}>
+							<EllipsisVertical size={20} />
+						</button>
+					</th>
+				{/snippet}
+
+				{#snippet notFound()}
+					<td colspan="4" class="text-center">User doesn't exist</td>
+				{/snippet}
+			</Table>
 		</div>
 	</div>
 </WrapperMain>
