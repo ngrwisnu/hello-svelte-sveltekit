@@ -1,14 +1,18 @@
 <script lang="ts">
 	import type { UserType } from '$lib/types/user';
+	import { page } from '$app/state';
 	import { EllipsisVertical } from 'lucide-svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import Input from '$lib/components/ui/Input.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
+	import Pagination from '$lib/components/ui/Pagination.svelte';
 
 	type Props = {
 		users: UserType[];
 	};
 
+	console.log(page.url);
+	console.log(page.url.searchParams.has('name'));
 	const { users }: Props = $props();
 
 	let searchText = $state('');
@@ -52,5 +56,8 @@
 				{/snippet}
 			</Table>
 		</div>
+	</div>
+	<div class="mt-4 flex w-full justify-end">
+		<Pagination length={92} />
 	</div>
 </WrapperMain>

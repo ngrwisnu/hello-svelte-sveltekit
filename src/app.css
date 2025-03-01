@@ -6,6 +6,10 @@
 		pastel;
 }
 
+@theme {
+	--color-active-secondary: #e2a0ff;
+}
+
 html {
 	font-family: 'Roboto', sans-serif;
 }
@@ -16,4 +20,8 @@ body {
 
 .menu-active {
 	@apply bg-[#55AD9B];
+}
+
+.btn-active {
+	@apply bg-active-secondary border-0 outline-none;
 }
