@@ -1,6 +1,4 @@
-export const generatePagination = (current: number, total: number, size: number = 10): string[] => {
-	total = Math.ceil(total / size);
-
+export const generatePagination = (current: number, total: number): string[] => {
 	if (total <= 7) {
 		return Array.from({ length: total }, (_, i) => `${i + 1}`);
 	}

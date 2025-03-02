@@ -4,12 +4,14 @@
 
 	interface Props {
 		length: number;
+		size?: number;
 	}
 
-	const { length = 1 }: Props = $props();
+	const { length = 1, size = 10 }: Props = $props();
 
 	let activePage = $state(1);
-	let totalPages = $derived(generatePagination(activePage, length));
+	let paginationLen = $derived(Math.ceil(length / size));
+	let totalPages = $derived(generatePagination(activePage, paginationLen));
 
 	const paginationHandler = (id: number) => {
 		activePage = id;
@@ -33,7 +35,7 @@
 		>
 	{/each}
 	<button
-		class={`join-item btn ${activePage === length && 'btn-disabled'}`}
+		class={`join-item btn ${activePage === paginationLen && 'btn-disabled'}`}
 		onclick={() => chevronHandler('right')}><ChevronRight size={14} /></button
 	>
 </div>
