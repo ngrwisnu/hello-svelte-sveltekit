@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="flex">
+<div class="bg-brand-background flex">
 	<Sidenav page={data.page} {isClose} />
 	<div class="w-full flex-1">
 		<Header {sidenavHandler} />

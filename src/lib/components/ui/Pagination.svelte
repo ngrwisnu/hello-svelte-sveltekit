@@ -14,7 +14,11 @@
 	let totalPages = $derived(generatePagination(activePage, paginationLen));
 
 	const paginationHandler = (id: number) => {
-		activePage = id;
+		if (isNaN(id)) {
+			return;
+		} else {
+			activePage = id;
+		}
 	};
 
 	const chevronHandler = (direction: 'left' | 'right') => {
