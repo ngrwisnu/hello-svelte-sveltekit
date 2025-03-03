@@ -26,8 +26,8 @@
 			<Input type="text" bind:value={searchText} class="pl-12" placeholder="Search by username" />
 		</div>
 	</div>
-	<div class="w-full overflow-x-hidden">
-		<div class="rounded-box bg-base-100 mt-4 w-full">
+	<div class="w-full">
+		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
 			<Table data={selectedUsers}>
 				{#snippet header()}
 					<th>Username</th>

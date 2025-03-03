@@ -12,8 +12,8 @@
 
 <WrapperMain>
 	<h1>Orders</h1>
-	<div class="w-full overflow-x-hidden">
-		<div class="rounded-box bg-base-100 mt-4 w-full">
+	<div class="w-full">
+		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
 			<Table data={orders}>
 				{#snippet header()}
 					<th>Order ID</th>

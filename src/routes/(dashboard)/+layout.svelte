@@ -14,7 +14,7 @@
 
 <div class="bg-brand-background flex">
 	<Sidenav page={data.page} {isClose} />
-	<div class="w-full flex-1">
+	<div class="w-full flex-1 overflow-x-hidden">
 		<Header {sidenavHandler} />
 		<main class="min-h-svh w-full">
 			{@render children()}
