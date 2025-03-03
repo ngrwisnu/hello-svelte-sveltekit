@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { generatePagination } from '$lib/helpers/generatePagination';
 	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+	import { innerWidth } from 'svelte/reactivity/window';
 
 	interface Props {
 		length: number;
@@ -32,12 +33,16 @@
 		class={`join-item btn ${activePage === 1 && 'btn-disabled'}`}
 		onclick={() => chevronHandler('left')}><ChevronLeft size={14} /></button
 	>
-	{#each totalPages as page}
-		<button
-			class={`join-item btn ${activePage.toString() === page && 'btn-active'}`}
-			onclick={() => paginationHandler(+page)}>{page}</button
-		>
-	{/each}
+	{#if innerWidth.current! > 640}
+		{#each totalPages as page}
+			<button
+				class={`join-item btn ${activePage.toString() === page && 'btn-active'}`}
+				onclick={() => paginationHandler(+page)}>{page}</button
+			>
+		{/each}
+	{:else}
+		<button class="join-item btn">{`${activePage} of ${paginationLen}`}</button>
+	{/if}
 	<button
 		class={`join-item btn ${activePage === paginationLen && 'btn-disabled'}`}
 		onclick={() => chevronHandler('right')}><ChevronRight size={14} /></button

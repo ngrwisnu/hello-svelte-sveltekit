@@ -56,7 +56,7 @@
 			</Table>
 		</div>
 	</div>
-	<div class="mt-4 flex w-full justify-end">
+	<div class="mt-4 flex w-full justify-center sm:justify-end">
 		<Pagination length={92} />
 	</div>
 </WrapperMain>

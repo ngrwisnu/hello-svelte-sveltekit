@@ -22,6 +22,10 @@ body {
 	@apply min-h-svh bg-slate-200;
 }
 
+.btn {
+	@apply text-brand-text;
+}
+
 .menu-active {
 	@apply bg-brand-secondary;
 }
