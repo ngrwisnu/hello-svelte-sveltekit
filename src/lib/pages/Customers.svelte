@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { UserType } from '$lib/types/user';
-	import { page } from '$app/state';
-	import { PenLine, Search, Trash2 } from 'lucide-svelte';
+	import { PenLine, Search } from 'lucide-svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import Input from '$lib/components/ui/Input.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
@@ -11,8 +10,6 @@
 		users: UserType[];
 	};
 
-	console.log(page.url);
-	console.log(page.url.searchParams.has('name'));
 	const { users }: Props = $props();
 
 	let searchText = $state('');

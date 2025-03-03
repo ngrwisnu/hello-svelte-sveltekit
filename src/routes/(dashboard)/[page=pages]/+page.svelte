@@ -19,4 +19,4 @@
 	});
 </script>
 
-<PageComp users={data.users} />
+<PageComp users={data.users} orders={data.orders} />
