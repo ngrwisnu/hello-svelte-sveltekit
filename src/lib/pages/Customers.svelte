@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { UserType } from '$lib/types/user';
 	import { page } from '$app/state';
-	import { PenLine, Trash2 } from 'lucide-svelte';
+	import { PenLine, Search, Trash2 } from 'lucide-svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import Input from '$lib/components/ui/Input.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
@@ -19,21 +19,15 @@
 	let selectedUsers = $derived.by(() => {
 		return users.filter((user) => user.username.toLowerCase().includes(searchText.toLowerCase()));
 	});
-
-	const deleteHandler = (id: string) => {
-		alert(`clicked: ${id}`);
-	};
 </script>
 
 <WrapperMain>
 	<h1>Customers</h1>
 	<div class="mt-8 flex w-full">
-		<Input
-			type="text"
-			bind:value={searchText}
-			class="lg:basis-1/4"
-			placeholder="Search by username"
-		/>
+		<div class="input-wrapper relative w-full lg:basis-1/4">
+			<Search class="absolute top-2.5 left-4 z-1 text-slate-500" size={20} />
+			<Input type="text" bind:value={searchText} class="pl-12" placeholder="Search by username" />
+		</div>
 	</div>
 	<div class="w-full overflow-x-hidden">
 		<div class="rounded-box bg-base-100 mt-4 w-full">
@@ -56,12 +50,6 @@
 						>
 							<PenLine size={20} />
 						</a>
-						<button
-							class="flex size-9 items-center justify-center text-red-500 hover:cursor-pointer"
-							onclick={() => deleteHandler(d.id)}
-						>
-							<Trash2 size={20} />
-						</button>
 					</th>
 				{/snippet}
 
