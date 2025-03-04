@@ -21,6 +21,18 @@
 			icon: ShoppingCart
 		},
 		{
+			id: 'products',
+			text: 'Products',
+			link: '/products',
+			icon: ShoppingCart
+		},
+		{
+			id: 'coupons',
+			text: 'Coupons',
+			link: '/coupons',
+			icon: ShoppingCart
+		},
+		{
 			id: 'orders',
 			text: 'Orders',
 			link: '/orders',
