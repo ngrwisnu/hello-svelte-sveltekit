@@ -1,0 +1,57 @@
+[
+	{
+		"id": "c1",
+		"code": "SUMMER10",
+		"name": "Summer Sale 10% Off",
+		"discount_type": "percentage",
+		"discount_amount": 10,
+		"limit": 100,
+		"expired": 1711920000,
+		"status": "active",
+		"createdAt": 1708972800
+	},
+	{
+		"id": "c2",
+		"code": "WELCOME20",
+		"name": "Welcome Discount",
+		"discount_type": "fixed",
+		"discount_amount": 20000,
+		"limit": 50,
+		"expired": 1712607600,
+		"status": "active",
+		"createdAt": 1708886400
+	},
+	{
+		"id": "c3",
+		"code": "FREESHIP",
+		"name": "Free Shipping",
+		"discount_type": "fixed",
+		"discount_amount": 30000,
+		"limit": 200,
+		"expired": 1713225600,
+		"status": "expired",
+		"createdAt": 1708800000
+	},
+	{
+		"id": "c4",
+		"code": "BLACKFRIDAY50",
+		"name": "Black Friday 50% Off",
+		"discount_type": "percentage",
+		"discount_amount": 50,
+		"limit": 500,
+		"expired": 1713830400,
+		"status": "active",
+		"createdAt": 1708713600
+	},
+	{
+		"id": "c5",
+		"code": "NEWYEAR25",
+		"name": "New Year Special",
+		"discount_type": "fixed",
+		"discount_amount": 25000,
+		"limit": 300,
+		"expired": 1714435200,
+		"status": "inactive",
+		"createdAt": 1708627200
+	}
+]
