@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { ShoppingCart, UsersRound, type Icon as IconType } from 'lucide-svelte';
+	import {
+		Archive,
+		ChartColumnBig,
+		ShoppingCart,
+		Ticket,
+		UsersRound,
+		type Icon as IconType
+	} from 'lucide-svelte';
 
 	type MenuItem = {
 		id: string;
@@ -18,19 +25,19 @@
 			id: 'dashboard',
 			text: 'Dashboard',
 			link: '/dashboard',
-			icon: ShoppingCart
+			icon: ChartColumnBig
 		},
 		{
 			id: 'products',
 			text: 'Products',
 			link: '/products',
-			icon: ShoppingCart
+			icon: Archive
 		},
 		{
 			id: 'coupons',
 			text: 'Coupons',
 			link: '/coupons',
-			icon: ShoppingCart
+			icon: Ticket
 		},
 		{
 			id: 'orders',
