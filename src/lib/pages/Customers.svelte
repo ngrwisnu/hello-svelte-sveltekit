@@ -19,8 +19,10 @@
 </script>
 
 <WrapperMain>
-	<h1>Customers</h1>
-	<div class="mt-8 flex w-full">
+	{#snippet title()}
+		<h1>Customers</h1>
+	{/snippet}
+	<div class="mflex w-full">
 		<div class="input-wrapper relative w-full lg:basis-1/4">
 			<Search class="absolute top-2.5 left-4 z-1 text-slate-500" size={20} />
 			<Input type="text" bind:value={searchText} class="pl-12" placeholder="Search by username" />

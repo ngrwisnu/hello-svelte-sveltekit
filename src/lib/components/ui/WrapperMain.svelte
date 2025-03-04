@@ -1,8 +1,14 @@
 <script lang="ts">
-	const { children } = $props();
+	const { title, children } = $props();
 </script>
 
-<div id="wrapper-main" class="w-full p-4">{@render children()}</div>
+<div id="wrapper-main" class="w-full p-4">
+	<div class="mb-8 w-full">
+		{@render title()}
+	</div>
+
+	{@render children()}
+</div>
 
 <style>
 	#wrapper-main :global(h1) {

@@ -11,7 +11,9 @@
 </script>
 
 <WrapperMain>
-	<h1>Orders</h1>
+	{#snippet title()}
+		<h1>Orders</h1>
+	{/snippet}
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
 			<Table data={orders}>

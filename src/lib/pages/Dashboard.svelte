@@ -3,5 +3,9 @@
 </script>
 
 <WrapperMain>
-	<h1>Dashboard</h1>
+	{#snippet title()}
+		<h1>Dashboard</h1>
+	{/snippet}
+
+	<p></p>
 </WrapperMain>

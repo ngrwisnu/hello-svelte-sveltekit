@@ -10,6 +10,7 @@
 		const pagesMap: {
 			[key: string]: any;
 		} = {
+			dashboard: Dashboard,
 			customers: Customers,
 			orders: Orders,
 			default: Dashboard

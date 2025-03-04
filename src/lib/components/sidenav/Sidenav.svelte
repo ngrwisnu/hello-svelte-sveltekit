@@ -15,6 +15,12 @@
 
 	const menus: MenuItem[] = [
 		{
+			id: 'dashboard',
+			text: 'Dashboard',
+			link: '/dashboard',
+			icon: ShoppingCart
+		},
+		{
 			id: 'orders',
 			text: 'Orders',
 			link: '/orders',
