@@ -1,12 +1,11 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/helpers/utils';
-	import type { UserType } from '$lib/types/user';
 
 	interface Props {
 		data: any[];
 		header: Snippet;
-		row: Snippet<[UserType]>;
+		row: Snippet<[any]>;
 		notFound: Snippet;
 		class?: string;
 	}
