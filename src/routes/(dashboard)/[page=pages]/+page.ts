@@ -4,6 +4,8 @@ import users from '$lib/assets/users.json';
 export const load: PageLoad = () => {
 	return {
 		users,
-		orders: []
+		orders: [],
+		products: [],
+		coupons: []
 	};
 };

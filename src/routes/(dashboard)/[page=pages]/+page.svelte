@@ -24,4 +24,4 @@
 	});
 </script>
 
-<PageComp users={data.users} orders={data.orders} />
+<PageComp users={data.users} orders={data.orders} products={data.products} coupons={data.coupons} />
