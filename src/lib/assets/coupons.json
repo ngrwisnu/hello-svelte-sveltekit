@@ -6,7 +6,7 @@
 		"discount_type": "percentage",
 		"discount_amount": 10,
 		"limit": 100,
-		"expired": 1711920000,
+		"expired": 1735689600000,
 		"status": "active",
 		"createdAt": 1708972800
 	},
@@ -17,7 +17,7 @@
 		"discount_type": "fixed",
 		"discount_amount": 20000,
 		"limit": 50,
-		"expired": 1712607600,
+		"expired": 1769817600000,
 		"status": "active",
 		"createdAt": 1708886400
 	},
@@ -28,7 +28,7 @@
 		"discount_type": "fixed",
 		"discount_amount": 30000,
 		"limit": 200,
-		"expired": 1713225600,
+		"expired": 1755388800000,
 		"status": "expired",
 		"createdAt": 1708800000
 	},
@@ -39,7 +39,7 @@
 		"discount_type": "percentage",
 		"discount_amount": 50,
 		"limit": 500,
-		"expired": 1713830400,
+		"expired": 1763769600000,
 		"status": "active",
 		"createdAt": 1708713600
 	},
@@ -50,7 +50,7 @@
 		"discount_type": "fixed",
 		"discount_amount": 25000,
 		"limit": 300,
-		"expired": 1714435200,
+		"expired": 1738368000000,
 		"status": "inactive",
 		"createdAt": 1708627200
 	}

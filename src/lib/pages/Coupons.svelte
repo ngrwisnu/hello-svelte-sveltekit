@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
+	import { getExpiredTime } from '$lib/helpers/getExpiredTime';
 	import type { CouponType } from '$lib/types/coupon';
 	import { EllipsisVertical, PenLine } from 'lucide-svelte';
 
@@ -27,20 +28,27 @@
 					<th>Name</th>
 					<th>Type</th>
 					<th>Amount</th>
+					<th>Expired At</th>
 					<th>Status</th>
 					<th></th>
 				{/snippet}
 
 				{#snippet row(d)}
+					{@const Exp = getExpiredTime(d.expired)}
 					<td>{d.code}</td>
 					<td>{d.name}</td>
 					<td>{d.discount_type}</td>
 					<td>{d.discount_amount}</td>
 					<td>
+						{#if Exp === 'expired'}
+							<div class="badge badge-soft badge-neutral">{Exp}</div>
+						{:else}
+							<div class="badge badge-ghost">{Exp}</div>
+						{/if}
+					</td>
+					<td>
 						{#if d.status === 'active'}
 							<div class="badge badge-success">active</div>
-						{:else if d.status === 'expired'}
-							<div class="badge badge-neutral">expired</div>
 						{:else}
 							<div class="badge badge-error">inactive</div>
 						{/if}
