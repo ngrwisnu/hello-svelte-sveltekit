@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
@@ -22,13 +23,13 @@
 	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
-			<Table data={products} class="min-w-[700px]">
+			<Table data={products}>
 				{#snippet header()}
 					<th>Name</th>
 					<th>Size (gr)</th>
 					<th>Stock</th>
 					<th>Price</th>
-					<th>Status</th>
+					<th class="min-w-[140px]">Status</th>
 					<th></th>
 				{/snippet}
 
@@ -37,11 +38,11 @@
 					<td>{d.size}</td>
 					<td>{d.stock}</td>
 					<td>{formatCurrency(d.price)}</td>
-					<td>
+					<td class="min-w-[140px]">
 						{#if d.status === 'in_stock'}
-							<div class="badge badge-xs md:badge-md badge-success">In Stock</div>
+							<Badge class="badge-success">In Stock</Badge>
 						{:else}
-							<div class="badge badge-xs md:badge-md badge-error">Out Of Stock</div>
+							<Badge class="badge-error">Out Of Stock</Badge>
 						{/if}
 					</td>
 					<th class="flex flex-wrap items-center justify-center gap-2">

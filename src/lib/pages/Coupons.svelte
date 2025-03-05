@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
@@ -45,16 +46,16 @@
 					<td>{d.discount_amount}</td>
 					<td>
 						{#if Exp === 'expired'}
-							<div class="badge badge-soft badge-neutral">{Exp}</div>
+							<Badge class="badge-soft badge-neutral">{Exp}</Badge>
 						{:else}
-							<div class="badge badge-ghost">{Exp}</div>
+							<Badge class="badge-ghost">{Exp}</Badge>
 						{/if}
 					</td>
 					<td>
 						{#if d.status === 'active'}
-							<div class="badge badge-success">active</div>
+							<Badge class="badge-success">active</Badge>
 						{:else}
-							<div class="badge badge-error">inactive</div>
+							<Badge class="badge-error">inactive</Badge>
 						{/if}
 					</td>
 					<th class="flex flex-wrap items-center justify-center gap-2">
