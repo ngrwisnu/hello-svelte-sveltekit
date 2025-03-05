@@ -5,6 +5,13 @@
 		dark --prefersdark,
 		pastel;
 }
+@plugin "daisyui/theme" {
+	name: 'pastel';
+	default: true;
+	--radius-selector: 0.25rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+}
 
 @theme {
 	--color-brand-primary: #ffb000;
