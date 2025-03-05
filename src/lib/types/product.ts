@@ -7,4 +7,5 @@ export type ProductType = {
 	status: string;
 	thumbnail?: string;
 	createdAt: number;
+	updatedAt: number;
 };

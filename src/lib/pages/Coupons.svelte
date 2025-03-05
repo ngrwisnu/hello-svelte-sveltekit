@@ -22,7 +22,7 @@
 		<h1>Coupons</h1>
 	{/snippet}
 	<div class="flex w-full">
-		<Button class="bg-brand-secondary text-base-100 ml-auto"><Plus size={20} /> Add</Button>
+		<Button class="bg-brand-secondary text-base-100 ml-auto"><Plus size={20} /> Add coupon</Button>
 	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">

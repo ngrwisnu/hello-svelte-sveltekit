@@ -6,7 +6,8 @@
 		"stock": 150,
 		"price": 50000,
 		"status": "in_stock",
-		"createdAt": 1708972800
+		"createdAt": 1708423200000,
+		"updatedAt": 1708875000000
 	},
 	{
 		"id": "p2",
@@ -15,7 +16,8 @@
 		"stock": 30,
 		"price": 70000,
 		"status": "in_stock",
-		"createdAt": 1708886400
+		"createdAt": 1704895200000,
+		"updatedAt": 1708938000000
 	},
 	{
 		"id": "p3",
@@ -24,7 +26,8 @@
 		"stock": 75,
 		"price": 80000,
 		"status": "out_of_stock",
-		"createdAt": 1708800000
+		"createdAt": 1701763200000,
+		"updatedAt": 1705320000000
 	},
 	{
 		"id": "p4",
@@ -33,6 +36,7 @@
 		"stock": 120,
 		"price": 100000,
 		"status": "in_stock",
-		"createdAt": 1708713600
+		"createdAt": 1706803200000,
+		"updatedAt": 1708454700000
 	}
 ]
