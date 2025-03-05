@@ -1,9 +1,10 @@
 <script lang="ts">
+	import Button from '$lib/components/ui/Button.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { getExpiredTime } from '$lib/helpers/getExpiredTime';
 	import type { CouponType } from '$lib/types/coupon';
-	import { EllipsisVertical, PenLine } from 'lucide-svelte';
+	import { EllipsisVertical, PenLine, Plus } from 'lucide-svelte';
 
 	type Props = {
 		coupons: CouponType[];
@@ -20,6 +21,9 @@
 	{#snippet title()}
 		<h1>Coupons</h1>
 	{/snippet}
+	<div class="flex w-full">
+		<Button class="bg-brand-secondary text-base-100 ml-auto"><Plus size={20} /> Add</Button>
+	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
 			<Table data={coupons}>

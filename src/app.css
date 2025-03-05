@@ -30,7 +30,6 @@ body {
 }
 
 .btn {
-	@apply text-brand-text;
 }
 
 .menu-active {
