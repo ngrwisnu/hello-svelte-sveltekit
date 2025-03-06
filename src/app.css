@@ -39,3 +39,11 @@ body {
 .btn-active {
 	@apply bg-brand-accent border-0 outline-none;
 }
+
+.stat {
+	@apply w-0;
+}
+
+.stat-figure {
+	@apply self-start;
+}

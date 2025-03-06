@@ -1,12 +1,23 @@
 <script lang="ts">
 	import Badge from '$lib/components/ui/Badge.svelte';
 	import Pagination from '$lib/components/ui/Pagination.svelte';
+	import Stat from '$lib/components/ui/Stat.svelte';
+	import StatIcon from '$lib/components/ui/StatIcon.svelte';
+	import StatTitle from '$lib/components/ui/StatTitle.svelte';
+	import StatValue from '$lib/components/ui/StatValue.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { formatCurrency } from '$lib/helpers/formatCurrency';
 	import { formatDate } from '$lib/helpers/formatDate';
 	import type { OrderType } from '$lib/types/order';
-	import { EllipsisVertical, PenLine } from 'lucide-svelte';
+	import {
+		CheckCheck,
+		ClipboardList,
+		ClockArrowDown,
+		EllipsisVertical,
+		PenLine,
+		X
+	} from 'lucide-svelte';
 
 	type Props = {
 		orders: {
@@ -16,6 +27,20 @@
 	};
 
 	const { orders }: Props = $props();
+	const overview = $derived.by(() => {
+		const summary: Record<OrderType['status'], number> = {
+			success: 0,
+			pending: 0,
+			pre_order: 0,
+			reject: 0
+		};
+
+		for (let i of orders.data) {
+			summary[i.status] = (summary[i.status] ?? 0) + 1;
+		}
+
+		return summary;
+	});
 
 	const statusMap: Record<OrderType['status'], { style: string; text: string }> = {
 		success: {
@@ -52,6 +77,60 @@
 	{#snippet title()}
 		<h1>Orders</h1>
 	{/snippet}
+	<div class="flex w-full flex-wrap gap-4">
+		<Stat class="bg-green-200">
+			{#snippet title()}
+				<StatTitle title="Order success" />
+			{/snippet}
+
+			{#snippet value()}
+				<StatValue value={overview['success']} class="bg-green-300" />
+			{/snippet}
+
+			{#snippet icon()}
+				<StatIcon icon={CheckCheck} class="bg-green-300" />
+			{/snippet}
+		</Stat>
+		<Stat class="bg-orange-200">
+			{#snippet title()}
+				<StatTitle title="Order pending" />
+			{/snippet}
+
+			{#snippet value()}
+				<StatValue value={overview['pending']} class="bg-orange-300" />
+			{/snippet}
+
+			{#snippet icon()}
+				<StatIcon icon={ClockArrowDown} class="bg-orange-300" />
+			{/snippet}
+		</Stat>
+		<Stat class="bg-indigo-200">
+			{#snippet title()}
+				<StatTitle title="Order pre-order" />
+			{/snippet}
+
+			{#snippet value()}
+				<StatValue value={overview['pre_order']} class="bg-indigo-300" />
+			{/snippet}
+
+			{#snippet icon()}
+				<StatIcon icon={ClipboardList} class="bg-indigo-300" />
+			{/snippet}
+		</Stat>
+		<Stat class="bg-rose-200">
+			{#snippet title()}
+				<StatTitle title="Order reject" />
+			{/snippet}
+
+			{#snippet value()}
+				<StatValue value={overview['reject']} class="bg-rose-300" />
+			{/snippet}
+
+			{#snippet icon()}
+				<StatIcon icon={X} class="bg-rose-300" />
+			{/snippet}
+		</Stat>
+	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
 			<Table>

@@ -83,7 +83,7 @@
 				"username": "Bob Smith",
 				"email": "bob.smith@example.com"
 			},
-			"status": "pre_order",
+			"status": "pending",
 			"payment_status": "settlement",
 			"payment_type": "bank_transfer",
 			"createdAt": 1708941600000,
