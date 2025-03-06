@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { cn } from '$lib/helpers/utils';
+	import type { ClassValue } from 'clsx';
 	import { type Icon as IconType } from 'lucide-svelte';
 
 	interface Props {
 		icon: typeof IconType;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const { icon, class: className }: Props = $props();

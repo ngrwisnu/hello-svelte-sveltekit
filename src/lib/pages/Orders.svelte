@@ -28,15 +28,18 @@
 
 	const { orders }: Props = $props();
 	const overview = $derived.by(() => {
-		const summary: Record<OrderType['status'], number> = {
-			success: 0,
-			pending: 0,
-			pre_order: 0,
-			reject: 0
-		};
+		const summary: {
+			stat: OrderType['status'];
+			val: number;
+		}[] = [
+			{ stat: 'success', val: 0 },
+			{ stat: 'pending', val: 0 },
+			{ stat: 'pre_order', val: 0 },
+			{ stat: 'reject', val: 0 }
+		];
 
 		for (let i of orders.data) {
-			summary[i.status] = (summary[i.status] ?? 0) + 1;
+			summary.forEach((item) => item.stat === i.status && item.val++);
 		}
 
 		return summary;
@@ -78,58 +81,47 @@
 		<h1>Orders</h1>
 	{/snippet}
 	<div class="flex w-full flex-wrap gap-4">
-		<Stat class="bg-green-200">
-			{#snippet title()}
-				<StatTitle title="Order success" />
-			{/snippet}
+		{#each overview as sum}
+			<Stat
+				class={[
+					sum.stat === 'success' && 'bg-green-200',
+					sum.stat === 'pending' && 'bg-orange-200',
+					sum.stat === 'pre_order' && 'bg-indigo-200',
+					sum.stat === 'reject' && 'bg-rose-200'
+				]}
+			>
+				{#snippet title()}
+					<StatTitle title={`Order ${sum.stat === 'pre_order' ? 'pre-order' : sum.stat}`} />
+				{/snippet}
 
-			{#snippet value()}
-				<StatValue value={overview['success']} class="bg-green-300" />
-			{/snippet}
+				{#snippet value()}
+					<StatValue
+						value={sum.val}
+						class={[
+							sum.stat === 'success' && 'bg-green-300',
+							sum.stat === 'pending' && 'bg-orange-300',
+							sum.stat === 'pre_order' && 'bg-indigo-300',
+							sum.stat === 'reject' && 'bg-rose-300'
+						]}
+					/>
+				{/snippet}
 
-			{#snippet icon()}
-				<StatIcon icon={CheckCheck} class="bg-green-300" />
-			{/snippet}
-		</Stat>
-		<Stat class="bg-orange-200">
-			{#snippet title()}
-				<StatTitle title="Order pending" />
-			{/snippet}
-
-			{#snippet value()}
-				<StatValue value={overview['pending']} class="bg-orange-300" />
-			{/snippet}
-
-			{#snippet icon()}
-				<StatIcon icon={ClockArrowDown} class="bg-orange-300" />
-			{/snippet}
-		</Stat>
-		<Stat class="bg-indigo-200">
-			{#snippet title()}
-				<StatTitle title="Order pre-order" />
-			{/snippet}
-
-			{#snippet value()}
-				<StatValue value={overview['pre_order']} class="bg-indigo-300" />
-			{/snippet}
-
-			{#snippet icon()}
-				<StatIcon icon={ClipboardList} class="bg-indigo-300" />
-			{/snippet}
-		</Stat>
-		<Stat class="bg-rose-200">
-			{#snippet title()}
-				<StatTitle title="Order reject" />
-			{/snippet}
-
-			{#snippet value()}
-				<StatValue value={overview['reject']} class="bg-rose-300" />
-			{/snippet}
-
-			{#snippet icon()}
-				<StatIcon icon={X} class="bg-rose-300" />
-			{/snippet}
-		</Stat>
+				{#snippet icon()}
+					<StatIcon
+						icon={(sum.stat === 'success' && CheckCheck) ||
+							(sum.stat === 'pending' && ClockArrowDown) ||
+							(sum.stat === 'pre_order' && ClipboardList) ||
+							X}
+						class={[
+							sum.stat === 'success' && 'bg-green-300',
+							sum.stat === 'pending' && 'bg-orange-300',
+							sum.stat === 'pre_order' && 'bg-indigo-300',
+							sum.stat === 'reject' && 'bg-rose-300'
+						]}
+					/>
+				{/snippet}
+			</Stat>
+		{/each}
 	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">

@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { cn } from '$lib/helpers/utils';
+	import type { ClassValue } from 'clsx';
 	import type { Snippet } from 'svelte';
+	import type { SvelteHTMLElements } from 'svelte/elements';
 
 	interface Props {
 		title: Snippet;
 		value: Snippet;
 		icon?: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
-	const { title, value, icon, class: className }: Props = $props();
+	const { title, value, icon, ...props }: Props = $props();
 </script>
 
-<div class={cn('stat basis-full rounded-2xl sm:max-w-60', className)}>
+<div class={cn('stat basis-full rounded-2xl sm:max-w-60', props.class)}>
 	<div class="stat-figure">
 		{@render icon?.()}
 	</div>

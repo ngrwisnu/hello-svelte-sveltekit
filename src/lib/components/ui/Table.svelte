@@ -1,17 +1,18 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/helpers/utils';
+	import type { ClassValue } from 'clsx';
 
 	interface Props {
 		header: Snippet;
 		children: Snippet;
-		class?: string;
+		class?: ClassValue;
 	}
 
-	let { header, children, class: className = '' }: Props = $props();
+	let { header, children, ...props }: Props = $props();
 </script>
 
-<table class={cn('table', className)}>
+<table class={cn('table', props.class)}>
 	<thead>
 		<tr>
 			{@render header()}

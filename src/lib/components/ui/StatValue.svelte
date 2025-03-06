@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { cn } from '$lib/helpers/utils';
+	import type { ClassValue } from 'clsx';
 
 	interface Props {
 		value: number;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	const { value, class: className }: Props = $props();
