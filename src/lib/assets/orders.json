@@ -1,0 +1,82 @@
+{
+	"data": [
+		{
+			"order_id": "ORD123456",
+			"customer": {
+				"username": "john_doe",
+				"email": "john.doe@example.com"
+			},
+			"status": "success",
+			"payment_status": "settlement",
+			"payment_type": "bank_transfer",
+			"createdAt": 1708871400000,
+			"total_price": 129.99,
+			"tracking_number": "TRK987654",
+			"items": [
+				{
+					"order_number": 9,
+					"id": "p1",
+					"name": "T-Shirt",
+					"qty": 2,
+					"price": 19.99
+				},
+				{
+					"order_number": 10,
+					"id": "p2",
+					"name": "Jeans",
+					"qty": 1,
+					"price": 49.99
+				}
+			],
+			"address": {
+				"city": "New York",
+				"province": "NY",
+				"full_address": "123 Main St, Apt 4B",
+				"phone": "555-1234",
+				"recipient_name": "John Doe"
+			},
+			"discount": {
+				"code": "WINTER20",
+				"discount_type": "percentage",
+				"discount_amount": 20
+			}
+		},
+		{
+			"order_id": "ORD789012",
+			"customer": {
+				"username": "jane_smith",
+				"email": "jane.smith@example.com"
+			},
+			"status": "pending",
+			"payment_status": "pending",
+			"payment_type": "cash",
+			"createdAt": 1708941600000,
+			"total_price": 89.99,
+			"tracking_number": "TRK456789",
+			"items": [
+				{
+					"order_number": 17,
+					"id": "p3",
+					"name": "Sneakers",
+					"qty": 1,
+					"price": 79.99
+				},
+				{
+					"order_number": 16,
+					"id": "p5",
+					"name": "Cap",
+					"qty": 1,
+					"price": 14.99
+				}
+			],
+			"address": {
+				"city": "Los Angeles",
+				"province": "CA",
+				"full_address": "456 Sunset Blvd, Suite 22",
+				"phone": "555-5678",
+				"recipient_name": "Jane Smith"
+			}
+		}
+	],
+	"length": 2
+}

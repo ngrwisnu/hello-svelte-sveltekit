@@ -2,9 +2,13 @@
 	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
+	import type { OrderType } from '$lib/types/order';
 
 	type Props = {
-		orders: [];
+		orders: {
+			data: OrderType[];
+			length: number;
+		};
 	};
 
 	const { orders }: Props = $props();
@@ -16,7 +20,7 @@
 	{/snippet}
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
-			<Table data={orders}>
+			<Table data={orders.data}>
 				{#snippet header()}
 					<th>Order ID</th>
 					<th>Customer Name</th>
@@ -36,6 +40,6 @@
 		</div>
 	</div>
 	<div class="mt-4 flex w-full justify-center sm:justify-end">
-		<Pagination length={15} />
+		<Pagination length={orders.length} />
 	</div>
 </WrapperMain>
