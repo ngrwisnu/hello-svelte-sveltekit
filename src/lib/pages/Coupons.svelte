@@ -27,7 +27,7 @@
 	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
-			<Table data={coupons}>
+			<Table>
 				{#snippet header()}
 					<th>Code</th>
 					<th>Name</th>
@@ -38,42 +38,46 @@
 					<th></th>
 				{/snippet}
 
-				{#snippet row(d)}
-					{@const Exp = getExpiredTime(d.expired)}
-					<td>{d.code}</td>
-					<td>{d.name}</td>
-					<td>{d.discount_type}</td>
-					<td>{d.discount_amount}</td>
-					<td>
-						{#if Exp === 'expired'}
-							<Badge class="badge-soft badge-neutral">{Exp}</Badge>
-						{:else}
-							<Badge class="badge-ghost">{Exp}</Badge>
-						{/if}
-					</td>
-					<td>
-						{#if d.status === 'active'}
-							<Badge class="badge-success">active</Badge>
-						{:else}
-							<Badge class="badge-error">inactive</Badge>
-						{/if}
-					</td>
-					<th class="flex flex-wrap items-center justify-center gap-2">
-						<a
-							href={`/coupons/update/${d.id}`}
-							class="flex size-9 items-center justify-center hover:cursor-pointer"
-						>
-							<PenLine size={20} />
-						</a>
-						<button class="hover:cursor-pointer" onclick={actionHandler}>
-							<EllipsisVertical size={20} />
-						</button>
-					</th>
-				{/snippet}
-
-				{#snippet notFound()}
-					<td colspan="6" class="text-center">No data found</td>
-				{/snippet}
+				{#if !coupons.length}
+					<tr>
+						<td colspan="6" class="text-center">No data found</td>
+					</tr>
+				{:else}
+					{#each coupons as c (c.id)}
+						{@const Exp = getExpiredTime(c.expired)}
+						<tr>
+							<td>{c.code}</td>
+							<td>{c.name}</td>
+							<td>{c.discount_type}</td>
+							<td>{c.discount_amount}</td>
+							<td>
+								{#if Exp === 'expired'}
+									<Badge class="badge-soft badge-neutral">{Exp}</Badge>
+								{:else}
+									<Badge class="badge-ghost">{Exp}</Badge>
+								{/if}
+							</td>
+							<td>
+								{#if c.status === 'active'}
+									<Badge class="badge-success">active</Badge>
+								{:else}
+									<Badge class="badge-error">inactive</Badge>
+								{/if}
+							</td>
+							<th class="flex flex-wrap items-center justify-center gap-2">
+								<a
+									href={`/coupons/update/${c.id}`}
+									class="flex size-9 items-center justify-center hover:cursor-pointer"
+								>
+									<PenLine size={20} />
+								</a>
+								<button class="hover:cursor-pointer" onclick={actionHandler}>
+									<EllipsisVertical size={20} />
+								</button>
+							</th>
+						</tr>
+					{/each}
+				{/if}
 			</Table>
 		</div>
 	</div>

@@ -1,7 +1,6 @@
 export const getExpiredTime = (expired: number) => {
 	const curr = new Date().getTime();
 
-	console.log(`${curr}: ${expired}`);
 	if (curr > expired) {
 		return 'expired';
 	}
