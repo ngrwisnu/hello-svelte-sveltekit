@@ -1,11 +1,14 @@
 <script lang="ts">
 	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
+	import Dropdown from '$lib/components/ui/Dropdown.svelte';
+	import DropdownButton from '$lib/components/ui/DropdownButton.svelte';
+	import DropdownContent from '$lib/components/ui/DropdownContent.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { formatCurrency } from '$lib/helpers/formatCurrency';
 	import type { ProductType } from '$lib/types/product';
-	import { EllipsisVertical, PenLine, Plus } from 'lucide-svelte';
+	import { EllipsisVertical, FileText, PenLine, Plus, Trash } from 'lucide-svelte';
 
 	type Props = {
 		products: ProductType[];
@@ -58,9 +61,17 @@
 								>
 									<PenLine size={20} />
 								</a>
-								<button class="hover:cursor-pointer">
-									<EllipsisVertical size={20} />
-								</button>
+								<Dropdown>
+									<DropdownButton>
+										<EllipsisVertical size={20} />
+									</DropdownButton>
+									<DropdownContent>
+										<li>
+											<a href={`/products/details/${p.id}`}><FileText size={20} /> Details</a>
+										</li>
+										<li><button class="text-red-600"><Trash size={20} /> Remove</button></li>
+									</DropdownContent>
+								</Dropdown>
 							</th>
 						</tr>
 					{/each}
