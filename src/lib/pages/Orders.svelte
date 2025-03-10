@@ -22,12 +22,12 @@
 	type Props = {
 		orders: {
 			data: OrderType[];
-			length: number;
 		};
 	};
 
 	const { orders }: Props = $props();
-	const overview = $derived.by(() => {
+	let dataLength = $derived(orders.data.length);
+	let overview = $derived.by(() => {
 		const summary: {
 			stat: OrderType['status'];
 			val: number;
@@ -173,6 +173,6 @@
 		</div>
 	</div>
 	<div class="mt-4 flex w-full justify-center sm:justify-end">
-		<Pagination length={orders.length} />
+		<Pagination length={dataLength} />
 	</div>
 </WrapperMain>

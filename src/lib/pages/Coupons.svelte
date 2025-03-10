@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
+	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { getExpiredTime } from '$lib/helpers/getExpiredTime';
@@ -8,10 +9,13 @@
 	import { EllipsisVertical, PenLine, Plus } from 'lucide-svelte';
 
 	type Props = {
-		coupons: CouponType[];
+		coupons: {
+			data: CouponType[];
+		};
 	};
 
 	const { coupons }: Props = $props();
+	let dataLength = $derived(coupons.data.length);
 
 	const actionHandler = () => {
 		alert('clicked');
@@ -38,12 +42,12 @@
 					<th></th>
 				{/snippet}
 
-				{#if !coupons.length}
+				{#if !coupons.data.length}
 					<tr>
 						<td colspan="6" class="text-center">No data found</td>
 					</tr>
 				{:else}
-					{#each coupons as c (c.id)}
+					{#each coupons.data as c (c.id)}
 						{@const Exp = getExpiredTime(c.expired)}
 						<tr>
 							<td>{c.code}</td>
@@ -80,5 +84,8 @@
 				{/if}
 			</Table>
 		</div>
+	</div>
+	<div class="mt-4 flex w-full justify-center sm:justify-end">
+		<Pagination length={dataLength} />
 	</div>
 </WrapperMain>

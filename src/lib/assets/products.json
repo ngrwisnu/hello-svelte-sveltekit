@@ -1,42 +1,44 @@
-[
-	{
-		"id": "p1",
-		"name": "Black Honey 500gr",
-		"size": 500,
-		"stock": 150,
-		"price": 50000,
-		"status": "in_stock",
-		"createdAt": 1708423200000,
-		"updatedAt": 1708875000000
-	},
-	{
-		"id": "p2",
-		"name": "Black Honey 700gr",
-		"size": 700,
-		"stock": 30,
-		"price": 70000,
-		"status": "in_stock",
-		"createdAt": 1704895200000,
-		"updatedAt": 1708938000000
-	},
-	{
-		"id": "p3",
-		"name": "Black Honey 800gr",
-		"size": 800,
-		"stock": 75,
-		"price": 80000,
-		"status": "out_of_stock",
-		"createdAt": 1701763200000,
-		"updatedAt": 1705320000000
-	},
-	{
-		"id": "p4",
-		"name": "Black Honey 1000gr",
-		"size": 1000,
-		"stock": 120,
-		"price": 100000,
-		"status": "in_stock",
-		"createdAt": 1706803200000,
-		"updatedAt": 1708454700000
-	}
-]
+{
+	"data": [
+		{
+			"id": "p1",
+			"name": "Black Honey 500gr",
+			"size": 500,
+			"stock": 150,
+			"price": 50000,
+			"status": "in_stock",
+			"createdAt": 1708423200000,
+			"updatedAt": 1708875000000
+		},
+		{
+			"id": "p2",
+			"name": "Black Honey 700gr",
+			"size": 700,
+			"stock": 30,
+			"price": 70000,
+			"status": "in_stock",
+			"createdAt": 1704895200000,
+			"updatedAt": 1708938000000
+		},
+		{
+			"id": "p3",
+			"name": "Black Honey 800gr",
+			"size": 800,
+			"stock": 75,
+			"price": 80000,
+			"status": "out_of_stock",
+			"createdAt": 1701763200000,
+			"updatedAt": 1705320000000
+		},
+		{
+			"id": "p4",
+			"name": "Black Honey 1000gr",
+			"size": 1000,
+			"stock": 120,
+			"price": 100000,
+			"status": "in_stock",
+			"createdAt": 1706803200000,
+			"updatedAt": 1708454700000
+		}
+	]
+}

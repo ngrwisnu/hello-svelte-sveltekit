@@ -7,14 +7,19 @@
 	import Pagination from '$lib/components/ui/Pagination.svelte';
 
 	type Props = {
-		users: UserType[];
+		users: {
+			data: UserType[];
+		};
 	};
 
 	const { users }: Props = $props();
+	let dataLength = $derived(users.data.length);
 
 	let searchText = $state('');
 	let selectedUsers = $derived.by(() => {
-		return users.filter((user) => user.username.toLowerCase().includes(searchText.toLowerCase()));
+		return users.data.filter((user) =>
+			user.username.toLowerCase().includes(searchText.toLowerCase())
+		);
 	});
 </script>
 
@@ -63,6 +68,6 @@
 		</div>
 	</div>
 	<div class="mt-4 flex w-full justify-center sm:justify-end">
-		<Pagination length={92} />
+		<Pagination length={dataLength} />
 	</div>
 </WrapperMain>

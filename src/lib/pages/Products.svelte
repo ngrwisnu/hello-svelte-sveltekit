@@ -4,6 +4,7 @@
 	import Dropdown from '$lib/components/ui/Dropdown.svelte';
 	import DropdownButton from '$lib/components/ui/DropdownButton.svelte';
 	import DropdownContent from '$lib/components/ui/DropdownContent.svelte';
+	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { formatCurrency } from '$lib/helpers/formatCurrency';
@@ -11,10 +12,13 @@
 	import { EllipsisVertical, FileText, PenLine, Plus, Trash } from 'lucide-svelte';
 
 	type Props = {
-		products: ProductType[];
+		products: {
+			data: ProductType[];
+		};
 	};
 
 	const { products }: Props = $props();
+	let dataLength = $derived(products.data.length);
 </script>
 
 <WrapperMain>
@@ -36,12 +40,12 @@
 					<th></th>
 				{/snippet}
 
-				{#if !products.length}
+				{#if !products.data.length}
 					<tr>
 						<td colspan="6" class="text-center">No data found</td>
 					</tr>
 				{:else}
-					{#each products as p (p.id)}
+					{#each products.data as p (p.id)}
 						<tr>
 							<td>{p.name}</td>
 							<td>{p.size}</td>
@@ -78,5 +82,8 @@
 				{/if}
 			</Table>
 		</div>
+	</div>
+	<div class="mt-4 flex w-full justify-center sm:justify-end">
+		<Pagination length={dataLength} />
 	</div>
 </WrapperMain>

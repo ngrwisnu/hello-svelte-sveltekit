@@ -1,32 +1,34 @@
-[
-	{
-		"id": "1",
-		"email": "john.doe@example.com",
-		"username": "johndoe",
-		"role": "ADMIN"
-	},
-	{
-		"id": "2",
-		"email": "jane.smith@example.com",
-		"username": "janesmith",
-		"role": "USER"
-	},
-	{
-		"id": "3",
-		"email": "michael.jones@example.com",
-		"username": "michaelj",
-		"role": "USER"
-	},
-	{
-		"id": "4",
-		"email": "emily.white@example.com",
-		"username": "emilyw",
-		"role": "USER"
-	},
-	{
-		"id": "5",
-		"email": "david.brown@example.com",
-		"username": "davidb",
-		"role": "USER"
-	}
-]
+{
+	"data": [
+		{
+			"id": "1",
+			"email": "john.doe@example.com",
+			"username": "johndoe",
+			"role": "ADMIN"
+		},
+		{
+			"id": "2",
+			"email": "jane.smith@example.com",
+			"username": "janesmith",
+			"role": "USER"
+		},
+		{
+			"id": "3",
+			"email": "michael.jones@example.com",
+			"username": "michaelj",
+			"role": "USER"
+		},
+		{
+			"id": "4",
+			"email": "emily.white@example.com",
+			"username": "emilyw",
+			"role": "USER"
+		},
+		{
+			"id": "5",
+			"email": "david.brown@example.com",
+			"username": "davidb",
+			"role": "USER"
+		}
+	]
+}
