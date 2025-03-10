@@ -53,14 +53,14 @@
 							<td>{u.username}</td>
 							<td>{u.email}</td>
 							<td>{u.role}</td>
-							<th class="flex flex-wrap items-center justify-center gap-2">
+							<td class="flex flex-wrap items-center justify-center gap-2">
 								<a
 									href={`/customers/update/${u.id}`}
 									class="flex size-9 items-center justify-center hover:cursor-pointer"
 								>
 									<PenLine size={20} />
 								</a>
-							</th>
+							</td>
 						</tr>
 					{/each}
 				{/if}

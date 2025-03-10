@@ -47,3 +47,7 @@ body {
 .stat-figure {
 	@apply self-start;
 }
+
+table th {
+	@apply bg-slate-100;
+}

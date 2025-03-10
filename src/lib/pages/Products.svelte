@@ -58,7 +58,7 @@
 									<Badge class="badge-error">Out Of Stock</Badge>
 								{/if}
 							</td>
-							<th class="flex flex-wrap items-center justify-center gap-2">
+							<td class="flex flex-wrap items-center justify-center gap-2">
 								<a
 									href={`/products/update/${p.id}`}
 									class="flex size-9 items-center justify-center hover:cursor-pointer"
@@ -76,7 +76,7 @@
 										<li><button class="text-red-600"><Trash size={20} /> Remove</button></li>
 									</DropdownContent>
 								</Dropdown>
-							</th>
+							</td>
 						</tr>
 					{/each}
 				{/if}

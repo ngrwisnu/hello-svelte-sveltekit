@@ -160,7 +160,7 @@
 							</td>
 							<td>{formatDate(o.createdAt)}</td>
 							<td>{formatCurrency(o.total_price)}</td>
-							<th class="flex flex-wrap items-center justify-center gap-2">
+							<td class="flex flex-wrap items-center justify-center gap-2">
 								<a
 									href={`/orders/update/${o.order_id}`}
 									class="flex size-9 items-center justify-center hover:cursor-pointer"
@@ -177,7 +177,7 @@
 										</li>
 									</DropdownContent>
 								</Dropdown>
-							</th>
+							</td>
 						</tr>
 					{/each}
 				{/if}
