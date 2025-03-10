@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Badge from '$lib/components/ui/Badge.svelte';
+	import Dropdown from '$lib/components/ui/Dropdown.svelte';
+	import DropdownButton from '$lib/components/ui/DropdownButton.svelte';
+	import DropdownContent from '$lib/components/ui/DropdownContent.svelte';
 	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import Stat from '$lib/components/ui/Stat.svelte';
 	import StatIcon from '$lib/components/ui/StatIcon.svelte';
@@ -15,7 +18,9 @@
 		ClipboardList,
 		ClockArrowDown,
 		EllipsisVertical,
+		FileText,
 		PenLine,
+		Trash,
 		X
 	} from 'lucide-svelte';
 
@@ -162,9 +167,16 @@
 								>
 									<PenLine size={20} />
 								</a>
-								<button class="hover:cursor-pointer">
-									<EllipsisVertical size={20} />
-								</button>
+								<Dropdown>
+									<DropdownButton>
+										<EllipsisVertical size={20} />
+									</DropdownButton>
+									<DropdownContent>
+										<li>
+											<a href={`/orders/details/${o.order_id}`}><FileText size={20} /> Details</a>
+										</li>
+									</DropdownContent>
+								</Dropdown>
 							</th>
 						</tr>
 					{/each}

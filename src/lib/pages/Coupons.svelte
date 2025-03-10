@@ -1,12 +1,15 @@
 <script lang="ts">
 	import Badge from '$lib/components/ui/Badge.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
+	import Dropdown from '$lib/components/ui/Dropdown.svelte';
+	import DropdownButton from '$lib/components/ui/DropdownButton.svelte';
+	import DropdownContent from '$lib/components/ui/DropdownContent.svelte';
 	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import WrapperMain from '$lib/components/ui/WrapperMain.svelte';
 	import { getExpiredTime } from '$lib/helpers/getExpiredTime';
 	import type { CouponType } from '$lib/types/coupon';
-	import { EllipsisVertical, PenLine, Plus } from 'lucide-svelte';
+	import { EllipsisVertical, FileText, PenLine, Plus, Trash } from 'lucide-svelte';
 
 	type Props = {
 		coupons: {
@@ -75,9 +78,17 @@
 								>
 									<PenLine size={20} />
 								</a>
-								<button class="hover:cursor-pointer" onclick={actionHandler}>
-									<EllipsisVertical size={20} />
-								</button>
+								<Dropdown>
+									<DropdownButton>
+										<EllipsisVertical size={20} />
+									</DropdownButton>
+									<DropdownContent>
+										<li>
+											<a href={`/coupons/details/${c.id}`}><FileText size={20} /> Details</a>
+										</li>
+										<li><button class="text-red-600"><Trash size={20} /> Remove</button></li>
+									</DropdownContent>
+								</Dropdown>
 							</th>
 						</tr>
 					{/each}
