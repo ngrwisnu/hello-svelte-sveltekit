@@ -10,4 +10,4 @@
 	let { children, class: className, ...props }: Props = $props();
 </script>
 
-<label class={cn(className)} {...props}>{@render children()}</label>
+<label class={cn('block', className)} {...props}>{@render children()}</label>

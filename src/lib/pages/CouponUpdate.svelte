@@ -9,14 +9,16 @@
 
 	const { id } = $props();
 
-	let selectedStatus = $state('out_of_stock');
+	let discountType = $state('fixed');
+	let expiredDate = $state('1');
+	let selectedStatus = $state('in_active');
 </script>
 
 <WrapperMain>
 	<h2 class="text-2xl font-semibold">Update</h2>
 	<h3 class="text-xl font-medium text-slate-600">#{id}</h3>
 	<div class="flex w-full justify-end gap-4">
-		<a href="/products" class="btn btn-ghost">Cancel</a>
+		<a href="/coupons" class="btn btn-ghost">Cancel</a>
 		<Button class="bg-brand-primary">Save</Button>
 	</div>
 	<div class="flex flex-col gap-4 md:flex-row">
@@ -31,29 +33,46 @@
 			<h4 class="mb-2 text-lg font-medium">General information</h4>
 			<div class="border-base-300 bg-base-100 w-full rounded-xl border p-4">
 				<FormItem>
-					<Label for="name">Product name</Label>
-					<Input id="name" value="Product 1" class="bg-slate-100" />
+					<Label for="name">Coupon name</Label>
+					<Input id="name" value="Coupon 1" class="bg-slate-100" />
 				</FormItem>
 				<FormItem>
-					<Label for="size">Size in gr</Label>
-					<Input id="size" type="number" value="500" disabled class="bg-slate-100" />
+					<Label for="code">Coupon code</Label>
+					<Input id="code" value="CPN1" class="bg-slate-100" />
 				</FormItem>
 				<FormItem>
-					<Label for="stock">Stock</Label>
-					<Input id="stock" type="number" value="12" class="bg-slate-100" />
+					<Label for="discount_type">Discount type</Label>
+					<Select id="discount_type" bind:value={discountType}>
+						<option value="percentage">Percentage</option>
+						<option value="fixed">Fixed</option>
+						<option value="free">Free</option>
+					</Select>
 				</FormItem>
 				<FormItem>
-					<Label for="price">Price</Label>
-					<Input id="price" type="number" value="30000" class="bg-slate-100" />
+					<Label for="discount_amount">Discount amount</Label>
+					<Input id="discount_amount" type="number" value="50" class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="limit">Limit</Label>
+					<div class="mb-1 text-sm text-slate-400">
+						Define the total usage limit for this coupon.
+					</div>
+					<Input id="limit" type="number" value="1" class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="expired">Expired Date</Label>
+					<Select id="expired" bind:value={expiredDate}>
+						<option value="1">1 Day</option>
+						<option value="5">5 Days</option>
+						<option value="7">7 Days</option>
+						<option value="14">14 Days</option>
+					</Select>
 				</FormItem>
 				<FormItem>
 					<Label for="status">Status</Label>
-					<div class="mb-1 text-sm text-slate-400">
-						Set the product's availability status for customers.
-					</div>
 					<Select id="status" bind:value={selectedStatus}>
-						<option value="in_stock">Available</option>
-						<option value="out_of_stock">Out Of Stock</option>
+						<option value="active">Active</option>
+						<option value="in_active">Inactive</option>
 					</Select>
 				</FormItem>
 			</div>

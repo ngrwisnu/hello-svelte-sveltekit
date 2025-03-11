@@ -6,9 +6,10 @@
 	interface Props {
 		children: Snippet;
 		class?: ClassValue;
+		onclick?: () => void;
 	}
 
-	let { children, ...props }: Props = $props();
+	let { children, onclick, ...props }: Props = $props();
 </script>
 
-<button class={cn('btn', props.class)}>{@render children()}</button>
+<button class={cn('btn', props.class)} {onclick}>{@render children()}</button>
