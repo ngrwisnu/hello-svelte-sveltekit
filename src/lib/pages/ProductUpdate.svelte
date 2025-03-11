@@ -4,6 +4,8 @@
 	import Button from '$lib/components/ui/Button.svelte';
 	import Input from '$lib/components/ui/Input.svelte';
 	import Select from '$lib/components/ui/Select.svelte';
+	import FormItem from '$lib/components/ui/FormItem.svelte';
+	import Label from '$lib/components/ui/Label.svelte';
 
 	const { id } = $props();
 
@@ -28,32 +30,32 @@
 		<div class="basis-full">
 			<h4 class="mb-2 text-lg font-medium">General information</h4>
 			<div class="border-base-300 bg-base-100 w-full rounded-xl border p-4">
-				<div class="mb-4">
-					<h6 class="mb-1">Product name</h6>
-					<Input value="Product 1" class="bg-slate-100" />
-				</div>
-				<div class="mb-4">
-					<h6 class="mb-1">Size in gr</h6>
-					<Input type="number" value="500" disabled class="bg-slate-100" />
-				</div>
-				<div class="mb-4">
-					<h6 class="mb-1">Stock</h6>
-					<Input type="number" value="12" class="bg-slate-100" />
-				</div>
-				<div class="mb-4">
-					<h6 class="mb-1">Price</h6>
-					<Input type="number" value="30000" class="bg-slate-100" />
-				</div>
-				<div class="mb-4">
-					<h6 class="">Status</h6>
+				<FormItem>
+					<Label for="name">Product name</Label>
+					<Input id="name" value="Product 1" class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="size">Size in gr</Label>
+					<Input id="size" type="number" value="500" disabled class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="stock">Stock</Label>
+					<Input id="stock" type="number" value="12" class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="price">Price</Label>
+					<Input id="price" type="number" value="30000" class="bg-slate-100" />
+				</FormItem>
+				<FormItem>
+					<Label for="status">Status</Label>
 					<div class="mb-1 text-sm text-slate-400">
 						Set the product's availability status for customers.
 					</div>
-					<Select bind:value={selectedStatus}>
+					<Select id="status" bind:value={selectedStatus}>
 						<option value="in_stock">Available</option>
 						<option value="out_of_stock">Out Of Stock</option>
 					</Select>
-				</div>
+				</FormItem>
 			</div>
 		</div>
 	</div>
