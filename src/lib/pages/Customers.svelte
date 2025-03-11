@@ -5,6 +5,7 @@
 	import Input from '$lib/components/ui/Input.svelte';
 	import Table from '$lib/components/ui/Table.svelte';
 	import Pagination from '$lib/components/ui/Pagination.svelte';
+	import { maskSensitiveInfo } from '$lib/helpers/maskSensitiveInfo';
 
 	type Props = {
 		users: {
@@ -40,7 +41,6 @@
 					<th>Username</th>
 					<th>Email</th>
 					<th>Role</th>
-					<th></th>
 				{/snippet}
 
 				{#if !selectedUsers.length}
@@ -51,16 +51,8 @@
 					{#each selectedUsers as u (u.id)}
 						<tr>
 							<td>{u.username}</td>
-							<td>{u.email}</td>
+							<td>{maskSensitiveInfo(u.email, 'email')}</td>
 							<td>{u.role}</td>
-							<td class="flex flex-wrap items-center justify-center gap-2">
-								<a
-									href={`/customers/update/${u.id}`}
-									class="flex size-9 items-center justify-center hover:cursor-pointer"
-								>
-									<PenLine size={20} />
-								</a>
-							</td>
 						</tr>
 					{/each}
 				{/if}
