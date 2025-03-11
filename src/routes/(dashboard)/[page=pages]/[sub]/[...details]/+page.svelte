@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProductDetails from '$lib/pages/ProductDetails.svelte';
+	import ProductUpdate from '$lib/pages/ProductUpdate.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -12,7 +12,7 @@
 			};
 		} = {
 			products: {
-				details: ProductDetails
+				update: ProductUpdate
 			}
 		};
 

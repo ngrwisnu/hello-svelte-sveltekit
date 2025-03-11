@@ -30,6 +30,7 @@ body {
 }
 
 .btn {
+	@apply border-none;
 }
 
 .menu-active {
