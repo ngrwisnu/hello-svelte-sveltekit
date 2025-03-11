@@ -167,16 +167,6 @@
 								>
 									<PenLine size={20} />
 								</a>
-								<Dropdown>
-									<DropdownButton>
-										<EllipsisVertical size={20} />
-									</DropdownButton>
-									<DropdownContent>
-										<li>
-											<a href={`/orders/details/${o.order_id}`}><FileText size={20} /> Details</a>
-										</li>
-									</DropdownContent>
-								</Dropdown>
 							</td>
 						</tr>
 					{/each}
