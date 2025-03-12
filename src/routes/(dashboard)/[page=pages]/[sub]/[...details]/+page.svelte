@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CouponCreate from '$lib/pages/CouponCreate.svelte';
 	import CouponUpdate from '$lib/pages/CouponUpdate.svelte';
 	import ProductUpdate from '$lib/pages/ProductUpdate.svelte';
 	import type { PageProps } from './$types';
@@ -16,6 +17,7 @@
 				update: ProductUpdate
 			},
 			coupons: {
+				create: CouponCreate,
 				update: CouponUpdate
 			}
 		};
