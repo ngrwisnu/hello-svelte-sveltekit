@@ -23,7 +23,9 @@
 		<h1>Products</h1>
 	{/snippet}
 	<div class="flex w-full">
-		<Button class="bg-brand-secondary text-base-100 ml-auto"><Plus size={20} /> Add product</Button>
+		<a href="/products/create" class="bg-brand-secondary btn text-base-100 ml-auto hover:opacity-90"
+			><Plus size={20} /> Add product</a
+		>
 	</div>
 	<div class="w-full">
 		<div class="rounded-box bg-base-100 mt-4 w-full overflow-x-auto">
