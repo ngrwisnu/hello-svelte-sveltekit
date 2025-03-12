@@ -60,14 +60,21 @@
 				</FormItem>
 				<FormItem>
 					<Label for="discount_amount">Discount amount</Label>
-					<Input id="discount_amount" type="number" placeholder="" class="bg-slate-100" required />
+					<Input
+						id="discount_amount"
+						type="number"
+						min="0"
+						placeholder=""
+						class="bg-slate-100"
+						required
+					/>
 				</FormItem>
 				<FormItem>
 					<Label for="limit">Limit</Label>
 					<div class="mb-1 text-sm text-slate-400">
 						Define the total usage limit for this coupon.
 					</div>
-					<Input id="limit" type="number" placeholder="10" class="bg-slate-100" />
+					<Input id="limit" type="number" min="0" placeholder="10" class="bg-slate-100" />
 				</FormItem>
 				<FormItem>
 					<Label for="expired">Expired Date</Label>
