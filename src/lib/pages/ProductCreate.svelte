@@ -75,7 +75,7 @@
 				</FormItem>
 				<div class="flex w-full justify-end gap-4">
 					<a href="/products" class="btn btn-ghost">Cancel</a>
-					<Button class="bg-brand-primary">Add product</Button>
+					<Button class="bg-brand-primary hover:opacity-90">Add product</Button>
 				</div>
 			</div>
 		</div>

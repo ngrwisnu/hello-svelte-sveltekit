@@ -95,7 +95,7 @@
 				</FormItem>
 				<div class="flex w-full justify-end gap-4">
 					<a href="/coupons" class="btn btn-ghost">Cancel</a>
-					<Button class="bg-brand-primary">Add coupon</Button>
+					<Button class="bg-brand-primary hover:opacity-90">Add coupon</Button>
 				</div>
 			</div>
 		</div>

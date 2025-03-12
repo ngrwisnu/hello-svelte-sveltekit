@@ -19,7 +19,7 @@
 	<h3 class="text-xl font-medium text-slate-600">#{id}</h3>
 	<div class="flex w-full justify-end gap-4">
 		<a href="/coupons" class="btn btn-ghost">Cancel</a>
-		<Button class="bg-brand-primary">Save</Button>
+		<Button class="bg-brand-primary hover:opacity-90">Save</Button>
 	</div>
 	<div class="flex flex-col gap-4 md:flex-row">
 		<div class="">
