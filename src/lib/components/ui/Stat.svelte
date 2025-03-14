@@ -2,7 +2,6 @@
 	import { cn } from '$lib/helpers/utils';
 	import type { ClassValue } from 'clsx';
 	import type { Snippet } from 'svelte';
-	import type { SvelteHTMLElements } from 'svelte/elements';
 
 	interface Props {
 		title: Snippet;
