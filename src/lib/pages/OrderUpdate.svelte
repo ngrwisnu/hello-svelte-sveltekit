@@ -50,36 +50,40 @@
 				<h4 class="py-2 text-lg font-medium">Items</h4>
 				<Card id="items-summary" class="@container w-full">
 					<CardContent class="space-y-2">
-						<div class="grid grid-cols-3 gap-2 @lg:grid-cols-12">
-							<div class="row-span-3 h-auto w-auto max-w-30 min-w-20 @lg:col-span-3">
+						<div
+							class="grid grid-cols-1 grid-rows-[repeat(5,_fit-content())] gap-2 @sm:grid-cols-3 @sm:grid-rows-[repeat(3,_min-content)] @lg:grid-cols-12 @lg:grid-rows-1"
+						>
+							<div class="h-auto w-auto max-w-30 min-w-20 @sm:max-lg:row-span-3 @lg:col-span-3">
 								<img src={thumb} alt="product thumbnail" />
 							</div>
-							<div class="font-medium @max-lg:col-start-2 @lg:col-span-3">Black Honey 700gr</div>
-							<div class="@max-lg:col-start-2 @lg:col-span-2">Rp 70.000</div>
+							<div class="font-medium @sm:max-lg:col-start-2 @lg:col-span-3">Black Honey 700gr</div>
+							<div class="@sm:max-lg:col-start-2 @lg:col-span-2">Rp 70.000</div>
 							<div
-								class="text-slate-500 @max-lg:col-start-2 @lg:col-span-2 @lg:justify-self-center"
+								class="text-slate-500 @sm:max-lg:col-start-2 @lg:col-span-2 @lg:justify-self-center"
 							>
 								x1
 							</div>
 							<div
-								class="row-start-1 justify-self-end font-medium @max-lg:col-end-4 @lg:col-span-2 @lg:col-end-13"
+								class="font-medium @sm:max-lg:col-end-4 @sm:max-lg:row-start-1 @lg:col-span-2 @lg:col-end-13 @lg:justify-self-end"
 							>
 								Rp 70.000
 							</div>
 						</div>
-						<div class="grid grid-cols-3 gap-2 @lg:grid-cols-12">
-							<div class="row-span-3 h-auto w-auto max-w-30 min-w-20 @lg:col-span-3">
+						<div
+							class="grid grid-cols-1 grid-rows-[repeat(5,_fit-content())] gap-2 @sm:grid-cols-3 @sm:grid-rows-[repeat(3,_min-content)] @lg:grid-cols-12 @lg:grid-rows-1"
+						>
+							<div class="h-auto w-auto max-w-30 min-w-20 @sm:max-lg:row-span-3 @lg:col-span-3">
 								<img src={thumb} alt="product thumbnail" />
 							</div>
-							<div class="font-medium @max-lg:col-start-2 @lg:col-span-3">Black Honey 700gr</div>
-							<div class="@max-lg:col-start-2 @lg:col-span-2">Rp 70.000</div>
+							<div class="font-medium @sm:max-lg:col-start-2 @lg:col-span-3">Black Honey 700gr</div>
+							<div class="@sm:max-lg:col-start-2 @lg:col-span-2">Rp 70.000</div>
 							<div
-								class="text-slate-500 @max-lg:col-start-2 @lg:col-span-2 @lg:justify-self-center"
+								class="text-slate-500 @sm:max-lg:col-start-2 @lg:col-span-2 @lg:justify-self-center"
 							>
 								x1
 							</div>
 							<div
-								class="row-start-1 justify-self-end font-medium @max-lg:col-end-4 @lg:col-span-2 @lg:col-end-13"
+								class="font-medium @sm:max-lg:col-end-4 @sm:max-lg:row-start-1 @lg:col-span-2 @lg:col-end-13 @lg:justify-self-end"
 							>
 								Rp 70.000
 							</div>
