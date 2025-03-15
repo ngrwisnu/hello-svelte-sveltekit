@@ -13,7 +13,7 @@
 </script>
 
 <WrapperMain>
-	<div class="flex justify-between gap-8">
+	<div class="flex flex-col justify-between gap-8 sm:flex-row">
 		<div class="flex flex-1 flex-col items-baseline gap-4 md:flex-row">
 			<div>
 				<h2 class="text-2xl font-semibold">Order</h2>
@@ -25,8 +25,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="">
-			<Button class="border-none bg-[#00BAFE] text-white hover:opacity-90">Mark as done</Button>
+		<div>
+			<Button class="w-full border-none bg-[#00BAFE] text-white hover:opacity-90 sm:w-fit"
+				>Mark as done</Button
+			>
 		</div>
 	</div>
 	<div class="mt-8 flex flex-col gap-6 md:flex-row">
