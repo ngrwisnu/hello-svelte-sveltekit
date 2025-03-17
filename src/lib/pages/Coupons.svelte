@@ -23,7 +23,9 @@
 		<h1>Coupons</h1>
 	{/snippet}
 	<div class="flex w-full">
-		<a href="/coupons/create" class="bg-brand-secondary btn text-base-100 ml-auto hover:opacity-90"
+		<a
+			href="/coupons/create"
+			class="bg-brand-secondary btn text-base-100 ml-auto border-none hover:opacity-90"
 			><Plus size={20} /> Add coupon</a
 		>
 	</div>
