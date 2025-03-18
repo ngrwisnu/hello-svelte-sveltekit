@@ -58,7 +58,7 @@
 
 <aside
 	class={[
-		'bg-base-100 sticky top-0 flex h-screen flex-col transition-all duration-300',
+		'bg-base-100 sticky top-0 z-50 flex h-screen flex-col transition-all duration-300',
 		isClose ? 'w-16' : 'w-64'
 	]}
 >
@@ -73,7 +73,7 @@
 						class={[
 							'rounded-lg transition-all',
 							menu.id === page && 'menu-active',
-							isClose && 'tooltip tooltip-right',
+							isClose && 'tooltip tooltip-right before:z-50 before:content-[attr(data-tip)]',
 							isClose ? 'gap-0' : 'gap-2'
 						]}
 						data-tip={isClose && menu.text}
